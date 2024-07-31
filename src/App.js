@@ -10,6 +10,7 @@ import { withAuthenticator,
   View,
   Text, 
   Divider,Tabs, TabItem, Alert, TextField, Grid,TextAreaField,
+  AccountSettings,
   useTheme} from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { useState } from 'react';
@@ -130,6 +131,18 @@ function App({ signOut, user }) {
                     } value={authResult} /> 
                   </View>
                 </Grid>
+              </TabItem>
+              <TabItem title="Change Password">
+                <View as="div" padding="10px">
+                  <AccountSettings.ChangePassword 
+                    displayText={{
+                      currentPasswordLabel: 'Enter current password',
+                      newPasswordLabel: 'Enter new password',
+                      confirmPasswordLabel: 'Confirm your password',
+                      updatePasswordText: 'Update your password',
+                    }}  
+                  />
+                </View>
               </TabItem>
             </Tabs>
             
